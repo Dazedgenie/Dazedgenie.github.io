@@ -96,7 +96,8 @@ window.PROJECTS = [
       { label: "Genre", value: "Side-scrolling puzzle" },
       { label: "Engine", value: "Godot 4.7, GDScript" },
       { label: "Progress", value: "2 chapters, 40 chambers" },
-      { label: "My role", value: "Design, story and direction" }
+      { label: "My role", value: "Design, story and direction" },
+      { label: "Demo", value: "Plays in the browser with keyboard and mouse" }
     ],
     body: [
       "Nur's lamp is both his prison and his only tool. He throws it, binds it in mid-air as a platform, uses its light to reveal hidden paths, and pours himself into iron bodies, all while tethered to it.",
@@ -112,11 +113,13 @@ window.PROJECTS = [
       "An automated playtest that solves every chamber to catch regressions"
     ],
     gallery: [
+      { src: "assets/projects/bound-by-wishes/title-screen.webp", caption: "The title screen of the browser demo." },
       { src: "assets/projects/bound-by-wishes/chamber-10.webp", caption: "Chamber 10, Hidden Step: the lamp can't go where the steps are. Its light can." },
       { src: "assets/projects/bound-by-wishes/chapter-2.webp", caption: "Chapter 2: The Vault, Hadir's Workshop and Unfinished Work." }
     ],
     links: [
-      { label: "Download the demo", url: "https://limewire.com/d/iNKxT#OXMpsEeSAk", primary: true }
+      { label: "Play in browser", url: "play/bound-by-wishes/", primary: true },
+      { label: "Download the demo", url: "https://limewire.com/d/iNKxT#OXMpsEeSAk" }
     ]
   },
   {

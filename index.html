@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dazed | Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Dazed: games, mods and code, conjured out of purple smoke.">
+<meta name="theme-color" content="#0a0716">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<meta property="og:image" content="assets/dazed-logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Mr+Dafoe&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-route="home">
+
+<a class="skip" href="#main-content">Skip to content</a>
+<div class="ambience" aria-hidden="true"></div>
+
+<header class="topbar">
+  <a class="brand" href="#home" data-route="home" data-site="name">Dazed</a>
+  <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="false" aria-label="Turn sound on">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor" fill-opacity=".15"/>
+      <g class="sound-on"><path d="M15.5 9a4 4 0 0 1 0 6"/><path d="M18 6.5a7.5 7.5 0 0 1 0 11"/></g>
+      <g class="sound-off"><path d="M16 9.5l5 5M21 9.5l-5 5"/></g>
+    </svg>
+  </button>
+</header>
+
+<main id="main-content" class="site-main" tabindex="-1">
+
+  <!-- HOME -->
+  <section class="page page-home" data-page="home" aria-labelledby="home-title">
+    <div class="hero">
+      <div class="hero-genie">
+        <!-- The logo, with each iris cut out as its own layer so it can follow the cursor.
+             The layers were made by assets/eyes/make-eyes.py. -->
+        <svg id="genie" class="genie" viewBox="0 0 1024 1024" role="img" aria-labelledby="genie-title">
+          <title id="genie-title">The Dazed logo: a blue genie with bloodshot eyes on a neon sign</title>
+          <defs>
+            <mask id="m-eye-left" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+              <image href="assets/eyes/eye-left-mask.png" x="500" y="236" width="85" height="46"/>
+            </mask>
+            <mask id="m-eye-right" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+              <image href="assets/eyes/eye-right-mask.png" x="590" y="255" width="55" height="40"/>
+            </mask>
+            <filter id="neon-glow" x="-20%" y="-60%" width="140%" height="220%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="9" result="wide"/>
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="tight"/>
+              <feMerge><feMergeNode in="wide"/><feMergeNode in="tight"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <image href="assets/dazed-logo.webp" width="1024" height="1024"/>
+          <g class="genie-eye" data-cx="540" data-cy="251" mask="url(#m-eye-left)">
+            <image href="assets/eyes/eye-left-plate.png" x="500" y="236" width="85" height="46"/>
+            <image class="iris" href="assets/eyes/eye-left-iris.png" x="500" y="236" width="85" height="46"/>
+          </g>
+          <g class="genie-eye" data-cx="612.5" data-cy="273" mask="url(#m-eye-right)">
+            <image href="assets/eyes/eye-right-plate.png" x="590" y="255" width="55" height="40"/>
+            <image class="iris" href="assets/eyes/eye-right-iris.png" x="590" y="255" width="55" height="40"/>
+          </g>
+          <!-- Text in the empty plaque at the bottom of the sign -->
+          <text class="plaque" x="512" y="912" text-anchor="middle" filter="url(#neon-glow)" data-site="plaque">Wishes granted</text>
+        </svg>
+      </div>
+
+      <div class="hero-text">
+        <p class="eyebrow">The portfolio of Dazed</p>
+        <h1 id="home-title" class="tagline" tabindex="-1" data-site="tagline">Games, mods and code, conjured out of purple smoke.</h1>
+        <p class="hero-hint">Rub the lamp in the corner for the menu, or make one of three wishes below.</p>
+      </div>
+    </div>
+
+    <div class="wishes-head">
+      <h2 id="wish-count">You have three wishes</h2>
+      <p id="wish-sub">Choose one, or rub the lamp for the full menu.</p>
+    </div>
+    <ul class="wishes">
+      <li>
+        <a class="wish" href="#projects" data-route="projects">
+          <span class="wish-num" aria-hidden="true">I</span>
+          <span class="wish-title">Show me your work</span>
+          <span class="wish-desc">A 25-mod Project Zomboid suite and two games in Godot.</span>
+          <span class="wish-cta">Grant wish</span>
+        </a>
+      </li>
+      <li>
+        <a class="wish" href="#about" data-route="about">
+          <span class="wish-num" aria-hidden="true">II</span>
+          <span class="wish-title">Who is Dazed?</span>
+          <span class="wish-desc">The person behind the purple smoke.</span>
+          <span class="wish-cta">Grant wish</span>
+        </a>
+      </li>
+      <li>
+        <a class="wish" href="#contact" data-route="contact">
+          <span class="wish-num" aria-hidden="true">III</span>
+          <span class="wish-title">Summon Dazed</span>
+          <span class="wish-desc">Where to find me online.</span>
+          <span class="wish-cta">Grant wish</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="page" data-page="projects" aria-labelledby="projects-title" hidden>
+    <header class="page-head">
+      <p class="eyebrow">Wish I</p>
+      <h1 id="projects-title" tabindex="-1">Projects</h1>
+      <p class="lede" data-site="projectsIntro"></p>
+    </header>
+    <ul class="projects" id="project-list"></ul>
+  </section>
+
+  <!-- PROJECT DETAIL: filled in from js/content.js -->
+  <section class="page" data-page="project" id="project-page" aria-labelledby="project-title" hidden></section>
+
+  <!-- ABOUT -->
+  <section class="page" data-page="about" aria-labelledby="about-title" hidden>
+    <header class="page-head">
+      <p class="eyebrow">Wish II</p>
+      <h1 id="about-title" tabindex="-1">Who is Dazed?</h1>
+    </header>
+    <div class="about">
+      <div class="bio" id="bio"></div>
+      <aside class="ledger" id="ledger" aria-label="Quick facts"></aside>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="page" data-page="contact" aria-labelledby="contact-title" hidden>
+    <header class="page-head">
+      <p class="eyebrow">Wish III</p>
+      <h1 id="contact-title" tabindex="-1">Summon Dazed</h1>
+      <p class="lede" data-site="contactIntro"></p>
+    </header>
+    <ul class="channels" id="channels"></ul>
+  </section>
+
+  <footer class="site-foot">
+    <span>&copy; <span id="year">2026</span> Dazed</span>
+    <span>Made by hand. Runs on smoke.</span>
+  </footer>
+</main>
+
+<dialog id="lightbox" class="lightbox" aria-label="Image viewer">
+  <figure>
+    <img id="lightbox-img" src="data:," alt="">
+    <figcaption>
+      <span id="lightbox-caption"></span>
+      <span id="lightbox-count" class="lightbox-count"></span>
+    </figcaption>
+  </figure>
+  <button id="lightbox-prev" class="btn lightbox-nav lightbox-prev" type="button" aria-label="Previous image">&larr;</button>
+  <button id="lightbox-next" class="btn lightbox-nav lightbox-next" type="button" aria-label="Next image">&rarr;</button>
+  <button id="lightbox-close" class="btn lightbox-close" type="button">Close</button>
+</dialog>
+
+<div id="fog" class="fog" aria-hidden="true" hidden></div>
+<canvas id="smoke" class="smoke" aria-hidden="true"></canvas>
+
+<div class="lamp-dock">
+  <nav id="menu" class="menu" aria-label="Main menu">
+    <ul>
+      <li style="--i:0"><a href="#home" data-route="home">Home <small>The lamp</small></a></li>
+      <li style="--i:1"><a href="#projects" data-route="projects">Projects <small>Wish I</small></a></li>
+      <li style="--i:2"><a href="#about" data-route="about">About <small>Wish II</small></a></li>
+      <li style="--i:3"><a href="#contact" data-route="contact">Contact <small>Wish III</small></a></li>
+    </ul>
+  </nav>
+
+  <button id="lamp" class="lamp" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+    <svg class="lamp-svg" viewBox="0 0 200 130" aria-hidden="true">
+      <defs>
+        <linearGradient id="l-brass" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#f7dc95"/>
+          <stop offset=".5" stop-color="#d9a94f"/>
+          <stop offset="1" stop-color="#7c4f17"/>
+        </linearGradient>
+        <linearGradient id="l-brass-dark" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#c08d34"/>
+          <stop offset="1" stop-color="#5e3a10"/>
+        </linearGradient>
+        <radialGradient id="l-gem" cx="40%" cy="35%">
+          <stop offset="0" stop-color="#e0ccff"/>
+          <stop offset=".6" stop-color="#8b4dff"/>
+          <stop offset="1" stop-color="#3d1680"/>
+        </radialGradient>
+      </defs>
+      <path d="M48 84C18 76 10 106 30 108C40 109 48 102 54 96" fill="none" stroke="url(#l-brass)" stroke-width="7" stroke-linecap="round"/>
+      <path fill="url(#l-brass)" d="M138 82C160 86 178 72 192 50L199 54C186 84 164 100 134 98Z"/>
+      <path fill="url(#l-brass-dark)" d="M80 112H110L120 124H70Z"/>
+      <ellipse cx="95" cy="124" rx="30" ry="5" fill="url(#l-brass-dark)"/>
+      <path fill="url(#l-brass)" d="M86 100H104L110 113H80Z"/>
+      <path fill="url(#l-brass)" d="M40 78C44 104 70 108 95 108C120 108 146 104 150 78Z"/>
+      <ellipse cx="95" cy="78" rx="55" ry="8" fill="url(#l-brass-dark)"/>
+      <path fill="url(#l-brass)" d="M66 76C70 54 120 54 124 76Z"/>
+      <rect x="92" y="48" width="6" height="10" fill="url(#l-brass-dark)"/>
+      <circle cx="95" cy="46" r="6" fill="url(#l-brass)"/>
+      <circle cx="95" cy="93" r="6" fill="url(#l-gem)"/>
+      <path d="M56 86C64 98 80 102 92 102" fill="none" stroke="#fff6dc" stroke-opacity=".55" stroke-width="3" stroke-linecap="round"/>
+      <circle id="lamp-spout" cx="195" cy="52" r="1" fill="none"/>
+    </svg>
+  </button>
+  <p class="lamp-hint" aria-hidden="true">Rub the lamp</p>
+</div>
+
+<script src="js/content.js"></script>
+<script src="js/sound.js"></script>
+<script src="js/smoke.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

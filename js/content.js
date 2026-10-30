@@ -43,6 +43,7 @@ window.SITE = {
    facts:    optional label/value pairs shown beside the write-up
    body:     optional paragraphs for the project page
    sections: optional headed blocks, e.g. feature groups
+   sectionsHeading: optional label shown above the sections, e.g. "Next up"
    list:     optional bullet list with its own heading
    gallery:  optional images. fit: "contain" shows the whole image in the
              thumbnail instead of cropping it (good for asset sheets).
@@ -57,51 +58,87 @@ window.PROJECTS = [
     studio: "Lampsmoke",
     type: "Game",
     status: "In development",
-    summary: "A side-scrolling puzzle game about Nur, a sarcastic djinn trapped in his own lamp. The lamp is both his prison and his only tool.",
+    summary: "A side-on puzzle-platformer about Iffy, a sarcastic djinn tied to his lamp. Throw it, freeze it in mid-air and pour yourself back inside to escape the prison built for him.",
     tech: ["Godot 4.7", "GDScript"],
-    cover: "assets/projects/bound-by-wishes/chamber-10.webp",
-    coverAlt: "Chamber 10, Hidden Step: Nur, a glowing blue djinn, stands in a dark purple chamber inside the circle of his lamp's light",
+    cover: "assets/projects/lampbound/title-screen.webp",
+    coverAlt: "The Lampbound title screen: the gold Lampbound logo and Iffy, a grinning purple djinn, rising from his lamp in a torchlit treasure vault",
     facts: [
-      { label: "Genre", value: "Side-scrolling puzzle" },
+      { label: "Genre", value: "2.5D puzzle-platformer" },
       { label: "Engine", value: "Godot 4.7, GDScript" },
-      { label: "Progress", value: "2 chapters, 40 chambers" },
+      { label: "Progress", value: "6 chapters and 3 endings playable" },
+      { label: "Platform", value: "PC (Windows), aiming for Steam" },
       { label: "My role", value: "Design, story and direction" },
-      { label: "Demo", value: "Plays in the browser with keyboard and mouse" }
+      { label: "Browser demo", value: "An early chapter 1 build, from before the rename and the new art" }
     ],
     body: [
-      "Nur's lamp is both his prison and his only tool. He throws it, binds it in mid-air as a platform, uses its light to reveal hidden paths, and pours himself into iron bodies, all while tethered to it.",
-      "I designed the game and its story and directed development: the core mechanics, the puzzle design, the story world, and the feel of every chamber through repeated playtesting. The world is a dark-fantasy kingdom told through small fragments like lost wishes and unsigned notes. The code is AI-assisted, which let me focus on design and iterate quickly."
+      "Iffy has been half-freed from his lamp, but he can't stray more than 7 metres from it. You throw the lamp, call it back, pour yourself into it, and use its weight to press plates and open doors. Each shackle you break gives Iffy a new power, from freezing the lamp in mid-air to possessing iron bodies and bottling water, fire and wind.",
+      "The lamp is both your tool and your leash, so every puzzle comes down to where you leave it. Iffy also grants wishes exactly as worded, and a coin flip decides whether they go right or go iffy. The story runs through six chapters, from inside the lamp to a buried dragon, and ends three different ways depending on one choice.",
+      "I designed the game and its story and directed development: the mechanics, the puzzles, the story world, and the feel of every room through repeated playtesting. The code is AI-assisted, which let me focus on design and iterate quickly."
     ],
     listHeading: "So far",
     list: [
-      "Two full chapters, 40 puzzle chambers",
-      "Three unlockable abilities",
-      "Two boss encounters, one of which can be finished without a fight",
-      "Collectible memories with animated \"ghost\" visions",
-      "Custom shaders for the characters",
-      "An automated playtest that solves every chamber to catch regressions"
+      "Six chapters, playable start to finish, each ending in boss and story scenes",
+      "Three endings, decided by a single choice",
+      "10 abilities: four from the start and six unlocked by breaking shackles",
+      "Six boss encounters, none of them hit-it-till-it-dies",
+      "A built-in map editor: levels are JSON files, and Tab switches between editing and playing",
+      "Cel-shaded 3D models, dialogue portraits, title key art and a main theme",
+      "Checkpoint saves, chamber select and rebindable keys",
+      "An automated playtest of 1,040 checks that plays through every route"
+    ],
+    sectionsHeading: "Next up",
+    sections: [
+      { heading: "Room redo", text: "Rebuilding the rooms so every puzzle draws on all of Iffy's powers." },
+      { heading: "Story and voice", text: "A final pass on the story, then voicing Iffy's lines." },
+      { heading: "Map sharing", text: "Exporting and importing maps, then Steam Workshop support." },
+      { heading: "Art pass", text: "The remaining backgrounds and character models in the cel-shaded style." }
     ],
     gallery: [
-      { src: "assets/projects/bound-by-wishes/title-screen.webp", caption: "The title screen of the browser demo, from when the game was called Bound by Wishes." },
-      { src: "assets/projects/bound-by-wishes/chamber-10.webp", caption: "Chamber 10, Hidden Step: the lamp can't go where the steps are. Its light can." },
-      { src: "assets/projects/bound-by-wishes/chapter-2.webp", caption: "Chapter 2: The Vault, Hadir's Workshop and Unfinished Work." }
+      { src: "assets/projects/lampbound/title-screen.webp", caption: "The title screen, with the Lampbound logo and Iffy." },
+      { src: "assets/projects/lampbound/broken-wish-garden.webp", caption: "The Broken Wish Garden: \"I haven't seen the moon in three thousand years.\"" },
+      { src: "assets/projects/lampbound/cisterns-iron-body.webp", caption: "The Cisterns: Iffy beside an iron body he can possess." },
+      { src: "assets/projects/lampbound/iron-warden.webp", caption: "The Iron Warden's hall, the first boss room, with the weight Iffy can drop." },
+      { src: "assets/projects/lampbound/the-seal.webp", caption: "The Seal: the chained eye beneath the floor at the end of chapter 1." }
     ],
     links: [
-      { label: "Play in browser", url: "play/bound-by-wishes/", primary: true },
-      { label: "Download the demo", url: "https://limewire.com/d/iNKxT#OXMpsEeSAk" }
+      { label: "Play the early demo", url: "play/bound-by-wishes/", primary: true }
     ]
   },
   {
-    // PLACEHOLDER: replace the summary and body, set the real status, and add
-    // tech, a cover image and a gallery when ready.
     slug: "project-ironblood",
     title: "Project Ironblood",
     studio: "Lampsmoke",
     type: "Game",
-    status: "In development",
-    summary: "A mech game in the works. Details coming soon.",
+    status: "Early development",
+    summary: "Command a squad of piloted mechs against an alien invasion: fit their weapons, manage reactor heat, and choose which ground to defend.",
+    tech: ["Godot 4.7", "GDScript"],
+    facts: [
+      { label: "Genre", value: "Turn-based mech tactics with a strategy campaign" },
+      { label: "Engine", value: "Godot 4.7.2, GDScript" },
+      { label: "Progress", value: "Playable alpha, v0.4" },
+      { label: "Platform", value: "Windows, with Steam and itch.io planned" },
+      { label: "Players", value: "Single-player" },
+      { label: "My role", value: "Designer, art director and tester" }
+    ],
     body: [
-      "Project Ironblood is a mech game in development at Lampsmoke. More details and screenshots will go up here soon."
+      "Project Ironblood is a turn-based tactics game about a small squad of piloted mechs holding a coastal region against an alien invasion. Each week you plan operations across six sectors, fit weapons and reactors in the hangar, and keep four pilots fit to fight. In battle you spend action points to move and shoot while watching heat, power and armor.",
+      "The mech is a machine you run, not just aim. Reactors trade power against heat, damage lands on specific parts, and both sides can react mid-turn. Losses carry forward: broken parts cost materiel, pilots get injured or captured, and the alien commander hits the sectors you leave weak."
+    ],
+    listHeading: "So far",
+    list: [
+      "Battles on a 12x12 board over 10 rounds, with fog of war, reactions and interrupts, withdrawal and alien reinforcements",
+      "3 mech frames, 3 reactors, 8 weapons, 4 pilots with traits, and 3 alien types with their own AI",
+      "A hangar with weapon sockets, fitting rules, a paint mode, and 3D-rendered mechs that show what's fitted",
+      "A campaign across a six-sector map with weekly operations, repairs, an alien commander, and win and loss tracks",
+      "5 commanders to pick from, 12 command-center scenes with replies that matter, and news broadcasts",
+      "Autosave plus 3 save slots, mid-battle suspend and an Ironman mode",
+      "About 365 automated rule checks and 8 smoke tests"
+    ],
+    sectionsHeading: "Next up",
+    sections: [
+      { heading: "Campaign playtest", text: "Playing through two to three campaign weeks, then on to phase 2." },
+      { heading: "Audio and settings", text: "Sound, a settings menu, and Steam and itch.io builds." },
+      { heading: "More missions", text: "Finishing Extract missions and commander intel." }
     ],
     links: []
   },

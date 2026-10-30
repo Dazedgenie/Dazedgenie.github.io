@@ -118,7 +118,8 @@
           el("dl", {}, ...p.facts.flatMap(f => [el("dt", { class: "label" }, f.label), el("dd", {}, f.value)]))
         )
       ),
-      p.sections && p.sections.length > 0 && el("section", { class: "features", "aria-label": "Features" },
+      p.sections && p.sections.length > 0 && p.sectionsHeading && el("h2", { class: "label features-label" }, p.sectionsHeading),
+      p.sections && p.sections.length > 0 && el("section", { class: "features", "aria-label": p.sectionsHeading || "Features" },
         ...p.sections.map(sec => el("div", { class: "feature" }, el("h2", {}, sec.heading), el("p", {}, sec.text)))
       ),
       gallery.length > 0 && el("section", { class: "gallery-wrap", "aria-labelledby": "gallery-title" },

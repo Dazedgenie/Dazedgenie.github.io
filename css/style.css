@@ -500,6 +500,7 @@ body[data-route="home"] .brand { visibility: hidden; }
 .feature p { margin: 0; color: var(--mist); }
 
 .gallery-wrap { display: grid; gap: 1rem; }
+.features-label { margin-bottom: 1rem; }
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));

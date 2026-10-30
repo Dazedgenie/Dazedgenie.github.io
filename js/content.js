@@ -14,7 +14,7 @@ window.SITE = {
     // Each string is one paragraph.
     paragraphs: [
       "I'm Dazed. I make games and mods, and most of my playing time goes into Project Zomboid. That's where my biggest project so far started: Dazed & Infected, a suite of 25 mods that adds depth to the survival loop while keeping the game's look and feel.",
-      "My games come out under my studio name, Lampsmoke Games. Right now that's Lampbound, a puzzle game about a djinn trapped in his own lamp; Project Ironblood, a mech game; Chin Check, an MMA career sim; and Dirty Money Disco. This is where I share how they're going. Rub the lamp to look around."
+      "My games come out under my studio name, Lampsmoke Games. Right now that's Lampbound, a puzzle game about a djinn trapped in his own lamp; Project Ironblood, a mech tactics game; Chin Check, an MMA career sim; and Dirty Money Disco, a 1980s nightclub management sim. This is where I share how they're going. Rub the lamp to look around."
     ],
     currently: "Running closed beta tests of Dazed & Infected on dedicated multiplayer servers",
     plays: ["Project Zomboid"],
@@ -177,19 +177,52 @@ window.PROJECTS = [
     links: []
   },
   {
-    // PLACEHOLDER: replace the summary and body, set the real status, and add
-    // tech, a cover image and a gallery when ready.
     slug: "dirty-money-disco",
     title: "Dirty Money Disco",
     studio: "Lampsmoke",
     type: "Game",
-    status: "In development",
-    summary: "A new Lampsmoke game. Details coming soon.",
+    status: "Prototype",
+    summary: "Turn a dead dive bar into the hottest club on a neon 1980s Miami strip, and decide how much dirty money it takes.",
+    tech: ["Godot 4.7", "GDScript"],
+    cover: "assets/projects/dirty-money-disco/night-crowd.webp",
+    coverAlt: "A graybox prototype of an isometric nightclub at 12:24 AM, with guests on a cyan dance floor, at tables and by the jukebox",
+    facts: [
+      { label: "Genre", value: "Nightclub management sim" },
+      { label: "Engine", value: "Godot 4.7, GDScript" },
+      { label: "Progress", value: "Prototype: the graybox core loop is playable" },
+      { label: "Platform", value: "PC, with Steam and itch.io planned" },
+      { label: "Players", value: "Single-player" },
+      { label: "My role", value: "Design director and tester" }
+    ],
     body: [
-      "Dirty Money Disco is in development at Lampsmoke. More details and screenshots will go up here soon."
+      "Dirty Money Disco is a management game set on a fictional Miami-style beach strip in the summer of 1986. Each day you lay out your club, set the cover charge, pick the night's music and hire staff. Then you open the doors and watch guests arrive, dance, drink, queue for the toilets, and leave happy or fed up. Each morning you read the money report and what people are saying, and plan the next night across a 20-night campaign.",
+      "The game is about the trade-off between vibe and money. Cheaper drinks fill the floor, but more staff cost wages. A planned optional crime layer adds smuggled liquor, money laundering and police heat for faster cash at a risk. The soundtrack covers four 1980s styles, synth-pop, Italo disco, Latin freestyle and electro funk, and each style draws a different crowd."
+    ],
+    listHeading: "So far",
+    list: [
+      "A day, night and morning loop over a 20-night campaign, with 8-minute nights, pause and 1x to 3x speed",
+      "Grid building on a 12 by 10 club floor: place, turn and sell objects, with some unlocked by reputation",
+      "Four guest types (tourist, local, club kid, high roller), each with needs for fun, thirst, bladder and comfort, and a mood",
+      "Day planning: a cover charge from $0 to $30, four music styles that shift the crowd, and bartender hiring",
+      "A morning report with income, wages, stock, rent, reputation and three guest reviews",
+      "A 16-track soundtrack, ready to be wired in",
+      "Every gameplay number in one tuning file, plus automated headless tests"
+    ],
+    sectionsHeading: "Next up",
+    sections: [
+      { heading: "First playtest", text: "Then balancing: night 1 earns too little, and reputation climbs too fast." },
+      { heading: "More of the club", text: "Bouncers, DJs and cleaners, incidents, path-finding, building at night, and saves." },
+      { heading: "Art and audio", text: "Replacing the gray boxes with isometric pixel art, and bringing the soundtrack and sound effects in." }
+    ],
+    gallery: [
+      { src: "assets/projects/dirty-money-disco/day-build.webp", caption: "Day 1 at The Rusty Anchor: the build menu, cover charge, music and bartender controls. Graybox placeholder art." },
+      { src: "assets/projects/dirty-money-disco/night-crowd.webp", caption: "12:24 AM on night 1: guests dancing, drinking and queueing." },
+      { src: "assets/projects/dirty-money-disco/night-closeup.webp", caption: "A closer look at the dance floor at the same moment." },
+      { src: "assets/projects/dirty-money-disco/morning-report.webp", caption: "The morning after night 1: the money breakdown, reputation and what the guests are saying." }
     ],
     links: []
   },
+
   {
     slug: "dazed-and-infected",
     title: "Dazed & Infected",

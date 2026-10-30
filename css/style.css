@@ -499,6 +499,28 @@ body[data-route="home"] .brand { visibility: hidden; }
 .feature h2 { margin: 0; font-size: var(--step-1); font-weight: 700; line-height: 1.2; }
 .feature p { margin: 0; color: var(--mist); }
 
+.credits {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+  padding: 1.5rem 1.6rem;
+  background: var(--velvet);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+}
+.credits-intro { margin: 0; max-width: 64ch; color: var(--mist); }
+.credits dl {
+  display: grid;
+  grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
+  gap: 0.55rem 1.5rem;
+  margin: 0;
+}
+.credits dt { color: var(--mist); }
+.credits dd { margin: 0; }
+@media (max-width: 560px) {
+  .credits dl { grid-template-columns: minmax(0, 1fr); gap: 0.15rem; }
+  .credits dd { margin-bottom: 0.6rem; }
+}
 .gallery-wrap { display: grid; gap: 1rem; }
 .features-label { margin-bottom: 1rem; }
 .gallery {

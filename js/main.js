@@ -122,6 +122,11 @@
       p.sections && p.sections.length > 0 && el("section", { class: "features", "aria-label": p.sectionsHeading || "Features" },
         ...p.sections.map(sec => el("div", { class: "feature" }, el("h2", {}, sec.heading), el("p", {}, sec.text)))
       ),
+      p.credits && p.credits.length > 0 && el("section", { class: "credits", "aria-labelledby": "credits-title" },
+        el("h2", { class: "label", id: "credits-title" }, "How it's made"),
+        p.creditsIntro && el("p", { class: "credits-intro" }, p.creditsIntro),
+        el("dl", {}, ...p.credits.flatMap(c => [el("dt", {}, c.label), el("dd", {}, c.value)]))
+      ),
       gallery.length > 0 && el("section", { class: "gallery-wrap", "aria-labelledby": "gallery-title" },
         el("h2", { class: "label", id: "gallery-title" }, "Gallery"),
         el("ul", { class: "gallery" }, ...gallery.map((g, i) => el("li", {},
@@ -181,7 +186,7 @@
     ledger.replaceChildren();
     if (a.currently) ledger.append(el("div", {}, el("h2", { class: "label" }, "Currently"), el("p", {}, a.currently)));
     if (a.plays && a.plays.length) ledger.append(el("div", {}, el("h2", { class: "label" }, "Playing"), el("ul", {}, ...a.plays.map(t => el("li", {}, t)))));
-    if (a.buildsWith && a.buildsWith.length) ledger.append(el("div", {}, el("h2", { class: "label" }, "Builds with"), el("ul", { class: "inline-list" }, ...a.buildsWith.map(t => el("li", {}, t)))));
+    if (a.buildsWith && a.buildsWith.length) ledger.append(el("div", {}, el("h2", { class: "label" }, "Made with"), el("ul", { class: "inline-list" }, ...a.buildsWith.map(t => el("li", {}, t)))));
   }
 
   function renderContact() {

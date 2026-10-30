@@ -112,6 +112,8 @@ window.PROJECTS = [
     status: "Early development",
     summary: "Command a squad of piloted mechs against an alien invasion: fit their weapons, manage reactor heat, and choose which ground to defend.",
     tech: ["Godot 4.7", "GDScript"],
+    cover: "assets/projects/project-ironblood/title.webp",
+    coverAlt: "Project Ironblood key art: three cream-armoured mechs stand on rubble at sunset above a burning city overrun by alien creatures",
     facts: [
       { label: "Genre", value: "Turn-based mech tactics with a strategy campaign" },
       { label: "Engine", value: "Godot 4.7.2, GDScript" },
@@ -139,6 +141,13 @@ window.PROJECTS = [
       { heading: "Campaign playtest", text: "Playing through two to three campaign weeks, then on to phase 2." },
       { heading: "Audio and settings", text: "Sound, a settings menu, and Steam and itch.io builds." },
       { heading: "More missions", text: "Finishing Extract missions and commander intel." }
+    ],
+    gallery: [
+      { src: "assets/projects/project-ironblood/title.webp", caption: "The title screen key art." },
+      { src: "assets/projects/project-ironblood/theater-map.webp", caption: "Strategic planning: six sectors, weekly operations, and the alien commander's moves to counter." },
+      { src: "assets/projects/project-ironblood/hangar.webp", caption: "The hangar: fitting weapons to the Cataphract's sockets, with its top-down battle sprites below." },
+      { src: "assets/projects/project-ironblood/pilot-roster.webp", caption: "The pilot roster: four pilots with traits, stats, frame assignments and an injury." },
+      { src: "assets/projects/project-ironblood/battle.webp", caption: "Holding the relay pad: a 70% shot under fog of war, with heat, capacitor and armor by facing." }
     ],
     links: []
   },

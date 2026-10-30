@@ -147,35 +147,48 @@ window.PROJECTS = [
     title: "Chin Check",
     studio: "Lampsmoke",
     type: "Game",
-    status: "Early development",
-    summary: "An MMA simulation and management game that follows one fighter's career. You run their training, then make real-time calls during fights that change how each one ends.",
-    tech: ["Godot 4.7"],
-    cover: "assets/projects/chin-check/test-fight.webp",
-    coverAlt: "The Chin Check prototype: an octagon and a fight log showing one round of jabs and 9 passing checks",
+    status: "Prototype",
+    summary: "Build one MMA fighter through training camps, then coach them live from the corner, where the right call at the right moment wins fights.",
+    tech: ["Godot 4.7", "GDScript"],
+    cover: "assets/projects/chin-check/standing-fight.webp",
+    coverAlt: "A graybox 3D cage: a red Kicker throws a teep at a blue Muay Thai fighter, with the fight feed and the corner's call bar",
     facts: [
-      { label: "Genre", value: "Sports sim and management" },
-      { label: "Engine", value: "Godot 4.7" },
-      { label: "Stage", value: "Prototype fight simulation" }
+      { label: "Genre", value: "MMA career and coaching sim" },
+      { label: "Engine", value: "Godot 4.7, GDScript" },
+      { label: "Progress", value: "Playable fight prototype" },
+      { label: "Platform", value: "Windows PC first, aiming for Steam" },
+      { label: "Players", value: "Single-player" },
+      { label: "My role", value: "Designer and director" }
     ],
     body: [
-      "The first piece is the fight simulation. Two fighters trade strikes in real time, and each strike lands or misses on its own odds. Work and damage wear them down: stamina drains, and speed, striking defence and fight IQ drop as they get hurt.",
-      "The simulation is deterministic, so a fight replays exactly from its seed and the calls made during it. It also runs far faster than real time, which leaves room to simulate the fights you don't watch."
+      "You're the head coach of one MMA fighter. Between fights you plan their training camp week by week and weigh the gains against fatigue and injury. On fight night you watch from the corner and shout calls like Takedown!, Circle out! or Catch the kick!. Your fighter acts on a call after a short delay, if they listen at all.",
+      "The fight isn't a cutscene. Striking, the clinch, takedowns, ground positions and submissions all play out move by move, and the fight feed explains why each one worked or failed. Calls work best when they're timed against the opponent's habits, which you can scout before the fight."
     ],
     listHeading: "So far",
     list: [
-      "A tick-based fight simulation with three five-minute rounds",
-      "Moves loaded from data files, five so far",
-      "Fatigue and injury that wear down a fighter's stats mid-fight",
-      "Exact replays from a seed plus the commands given",
-      "60 seconds of fight simulated in about 20 ms, over 1,000 times real time",
-      "A live debug console and an automated test fight with 9 checks, all passing"
+      "A fight engine with 54 moves (20 strikes, 5 takedowns, 11 ground moves and 8 submissions), referee stoppages, three judges and four rulesets",
+      "17 corner calls with a voice meter, a reaction delay and a chance your fighter ignores you, plus up to two drilled rules",
+      "15 fighting styles, from Boxer and Wrestler to Muay Thai, BJJ and Sambo, scouted on a tale-of-the-tape screen",
+      "A 3D cage with a body damage figure, a live fight feed, slow motion and 2x or 4x speed",
+      "A training camp planner with 17 session types, 13 preset plans, a fatigue and injury forecast, and a fight night doctor's check",
+      "690 automated tests, pinned fights that catch unintended changes, and a harness that runs fights in bulk for balancing"
+    ],
+    sectionsHeading: "Next up",
+    sections: [
+      { heading: "Vertical slice", text: "Childhood vignettes, the gym walk-in, three minigames, three fights, the cutman, and saving." },
+      { heading: "First playtest", text: "Getting the fight prototype in front of players and writing up what they find." },
+      { heading: "Fight screen", text: "A technique wheel, gameplans, the cutman's corner, crowd and bell sounds, and accessibility options." }
     ],
     gallery: [
-      { src: "assets/projects/chin-check/test-fight.webp", caption: "A test fight: one round of jabs, the end-of-fight summary, and all 9 checks passing." },
-      { src: "assets/projects/chin-check/live-fight.webp", caption: "The debug console during a live fight: three five-minute rounds at 2x speed." }
+      { src: "assets/projects/chin-check/tale-of-the-tape.webp", caption: "The tale of the tape: Wrestler against Kicker, with graded stats and keys to the fight." },
+      { src: "assets/projects/chin-check/camp-planner.webp", caption: "Planning a six-week camp: daily sessions, the fatigue curve and how each week moves the stats." },
+      { src: "assets/projects/chin-check/fight-night.webp", caption: "Fight night: gas tank, fatigue, the doctor's check and what the camp added." },
+      { src: "assets/projects/chin-check/standing-fight.webp", caption: "On the feet: Kicker and Muay Thai trade body kicks, with every exchange explained in the feed." },
+      { src: "assets/projects/chin-check/ground-fight.webp", caption: "On the ground: the Wrestler takes the Boxer's back. Graybox placeholder art." }
     ],
     links: []
   },
+
   {
     slug: "dirty-money-disco",
     title: "Dirty Money Disco",

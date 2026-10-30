@@ -37,7 +37,8 @@
     $("#year").textContent = new Date().getFullYear();
   }
 
-  const projectBySlug = slug => PROJECTS.find(p => p.slug && p.slug === slug);
+  // Old links keep working through each project's aliases (e.g. a renamed game).
+  const projectBySlug = slug => PROJECTS.find(p => p.slug && (p.slug === slug || (p.aliases || []).includes(slug)));
 
   function coverArt(p, cls) {
     const art = el("div", { class: cls, "data-type": p.type || "Code" });
@@ -77,6 +78,7 @@
           el("div", { class: "card-body" },
             chips(p),
             // The title link covers the whole card (see .card-link in the CSS).
+            p.studio && el("p", { class: "studio-credit" }, `A ${p.studio} game`),
             el("h2", { class: "card-title" }, el("a", { class: "card-link", href: `#${p.slug}`, "data-route": p.slug }, p.title)),
             el("p", { class: "card-summary" }, p.summary),
             p.tech && p.tech.length > 0 && el("p", { class: "card-tech" }, p.tech.join("  ·  ")),
@@ -98,6 +100,7 @@
       el("a", { class: "back", href: "#projects", "data-route": "projects" }, "All projects"),
       el("header", { class: "page-head project-head" },
         chips(p),
+        p.studio && el("p", { class: "studio-credit" }, `A ${p.studio} game`),
         el("h1", { id: "project-title", tabindex: "-1" }, p.title),
         el("p", { class: "lede" }, p.summary),
         linkButtons(p.links, "project-links")
@@ -436,7 +439,9 @@
 
   function routeFromHash() {
     const token = (location.hash || "").slice(1);
-    return token in ROUTES || projectBySlug(token) ? token : "home";
+    if (token in ROUTES) return token;
+    const project = projectBySlug(token);
+    return project ? project.slug : "home";
   }
 
   function show(route) {

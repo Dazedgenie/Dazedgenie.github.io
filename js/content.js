@@ -7,14 +7,14 @@ window.SITE = {
   name: "Dazed",
   tagline: "Games, mods and code, conjured out of purple smoke.",
   plaque: "Wishes granted",  // the neon line in the plaque under the logo; keep it short
-  projectsIntro: "What I'm building right now, from closed beta to early days.",
+  projectsIntro: "Lampsmoke games first, then the mods. From closed beta to early days.",
   contactIntro: "No lamp rubbing needed. You can find me here.",
 
   about: {
     // Each string is one paragraph.
     paragraphs: [
       "I'm Dazed. I make games and mods, and most of my playing time goes into Project Zomboid. That's where my biggest project so far started: Dazed & Infected, a suite of 25 mods that adds depth to the survival loop while keeping the game's look and feel.",
-      "Alongside it I'm building two games of my own: Bound by Wishes, a puzzle game about a djinn trapped in his own lamp, and Chin Check, an MMA career sim. Both are made in Godot. This is where I share how they're going. Rub the lamp to look around."
+      "My games come out under my studio name, Lampsmoke Games. Right now that's Lampbound, a puzzle game about a djinn trapped in his own lamp; Project Ironblood, a mech game; Chin Check, an MMA career sim; and Dirty Money Disco. This is where I share how they're going. Rub the lamp to look around."
     ],
     currently: "Running closed beta tests of Dazed & Infected on dedicated multiplayer servers",
     plays: ["Project Zomboid"],
@@ -33,6 +33,8 @@ window.SITE = {
    Each project gets its own page at #slug (e.g. #chin-check).
 
    slug:     short id for the page link: lowercase letters, numbers, dashes
+   aliases:  optional old slugs that should still open this page
+   studio:   optional, e.g. "Lampsmoke" shows "A Lampsmoke game"
    type:     "Game", "Mod" or "Code" (picks the icon and colour)
    status:   any short text. "Released", "Closed beta", "In development"
              and "Early development" each get their own colour.
@@ -48,6 +50,109 @@ window.SITE = {
    ------------------------------------------------------------ */
 
 window.PROJECTS = [
+  {
+    slug: "lampbound",
+    aliases: ["bound-by-wishes"],  // the game's old name, so shared links still work
+    title: "Lampbound",
+    studio: "Lampsmoke",
+    type: "Game",
+    status: "In development",
+    summary: "A side-scrolling puzzle game about Nur, a sarcastic djinn trapped in his own lamp. The lamp is both his prison and his only tool.",
+    tech: ["Godot 4.7", "GDScript"],
+    cover: "assets/projects/bound-by-wishes/chamber-10.webp",
+    coverAlt: "Chamber 10, Hidden Step: Nur, a glowing blue djinn, stands in a dark purple chamber inside the circle of his lamp's light",
+    facts: [
+      { label: "Genre", value: "Side-scrolling puzzle" },
+      { label: "Engine", value: "Godot 4.7, GDScript" },
+      { label: "Progress", value: "2 chapters, 40 chambers" },
+      { label: "My role", value: "Design, story and direction" },
+      { label: "Demo", value: "Plays in the browser with keyboard and mouse" }
+    ],
+    body: [
+      "Nur's lamp is both his prison and his only tool. He throws it, binds it in mid-air as a platform, uses its light to reveal hidden paths, and pours himself into iron bodies, all while tethered to it.",
+      "I designed the game and its story and directed development: the core mechanics, the puzzle design, the story world, and the feel of every chamber through repeated playtesting. The world is a dark-fantasy kingdom told through small fragments like lost wishes and unsigned notes. The code is AI-assisted, which let me focus on design and iterate quickly."
+    ],
+    listHeading: "So far",
+    list: [
+      "Two full chapters, 40 puzzle chambers",
+      "Three unlockable abilities",
+      "Two boss encounters, one of which can be finished without a fight",
+      "Collectible memories with animated \"ghost\" visions",
+      "Custom shaders for the characters",
+      "An automated playtest that solves every chamber to catch regressions"
+    ],
+    gallery: [
+      { src: "assets/projects/bound-by-wishes/title-screen.webp", caption: "The title screen of the browser demo, from when the game was called Bound by Wishes." },
+      { src: "assets/projects/bound-by-wishes/chamber-10.webp", caption: "Chamber 10, Hidden Step: the lamp can't go where the steps are. Its light can." },
+      { src: "assets/projects/bound-by-wishes/chapter-2.webp", caption: "Chapter 2: The Vault, Hadir's Workshop and Unfinished Work." }
+    ],
+    links: [
+      { label: "Play in browser", url: "play/bound-by-wishes/", primary: true },
+      { label: "Download the demo", url: "https://limewire.com/d/iNKxT#OXMpsEeSAk" }
+    ]
+  },
+  {
+    // PLACEHOLDER: replace the summary and body, set the real status, and add
+    // tech, a cover image and a gallery when ready.
+    slug: "project-ironblood",
+    title: "Project Ironblood",
+    studio: "Lampsmoke",
+    type: "Game",
+    status: "In development",
+    summary: "A mech game in the works. Details coming soon.",
+    body: [
+      "Project Ironblood is a mech game in development at Lampsmoke. More details and screenshots will go up here soon."
+    ],
+    links: []
+  },
+  {
+    slug: "chin-check",
+    title: "Chin Check",
+    studio: "Lampsmoke",
+    type: "Game",
+    status: "Early development",
+    summary: "An MMA simulation and management game that follows one fighter's career. You run their training, then make real-time calls during fights that change how each one ends.",
+    tech: ["Godot 4.7"],
+    cover: "assets/projects/chin-check/test-fight.webp",
+    coverAlt: "The Chin Check prototype: an octagon and a fight log showing one round of jabs and 9 passing checks",
+    facts: [
+      { label: "Genre", value: "Sports sim and management" },
+      { label: "Engine", value: "Godot 4.7" },
+      { label: "Stage", value: "Prototype fight simulation" }
+    ],
+    body: [
+      "The first piece is the fight simulation. Two fighters trade strikes in real time, and each strike lands or misses on its own odds. Work and damage wear them down: stamina drains, and speed, striking defence and fight IQ drop as they get hurt.",
+      "The simulation is deterministic, so a fight replays exactly from its seed and the calls made during it. It also runs far faster than real time, which leaves room to simulate the fights you don't watch."
+    ],
+    listHeading: "So far",
+    list: [
+      "A tick-based fight simulation with three five-minute rounds",
+      "Moves loaded from data files, five so far",
+      "Fatigue and injury that wear down a fighter's stats mid-fight",
+      "Exact replays from a seed plus the commands given",
+      "60 seconds of fight simulated in about 20 ms, over 1,000 times real time",
+      "A live debug console and an automated test fight with 9 checks, all passing"
+    ],
+    gallery: [
+      { src: "assets/projects/chin-check/test-fight.webp", caption: "A test fight: one round of jabs, the end-of-fight summary, and all 9 checks passing." },
+      { src: "assets/projects/chin-check/live-fight.webp", caption: "The debug console during a live fight: three five-minute rounds at 2x speed." }
+    ],
+    links: []
+  },
+  {
+    // PLACEHOLDER: replace the summary and body, set the real status, and add
+    // tech, a cover image and a gallery when ready.
+    slug: "dirty-money-disco",
+    title: "Dirty Money Disco",
+    studio: "Lampsmoke",
+    type: "Game",
+    status: "In development",
+    summary: "A new Lampsmoke game. Details coming soon.",
+    body: [
+      "Dirty Money Disco is in development at Lampsmoke. More details and screenshots will go up here soon."
+    ],
+    links: []
+  },
   {
     slug: "dazed-and-infected",
     title: "Dazed & Infected",
@@ -82,77 +187,5 @@ window.PROJECTS = [
     links: [
       { label: "Join the beta on Discord", url: "https://discord.gg/qkP5CPHgy", primary: true }
     ]
-  },
-  {
-    slug: "bound-by-wishes",
-    title: "Bound by Wishes",
-    type: "Game",
-    status: "In development",
-    summary: "A side-scrolling puzzle game about Nur, a sarcastic djinn trapped in his own lamp. The lamp is both his prison and his only tool.",
-    tech: ["Godot 4.7", "GDScript"],
-    cover: "assets/projects/bound-by-wishes/chamber-10.webp",
-    coverAlt: "Chamber 10, Hidden Step: Nur, a glowing blue djinn, stands in a dark purple chamber inside the circle of his lamp's light",
-    facts: [
-      { label: "Genre", value: "Side-scrolling puzzle" },
-      { label: "Engine", value: "Godot 4.7, GDScript" },
-      { label: "Progress", value: "2 chapters, 40 chambers" },
-      { label: "My role", value: "Design, story and direction" },
-      { label: "Demo", value: "Plays in the browser with keyboard and mouse" }
-    ],
-    body: [
-      "Nur's lamp is both his prison and his only tool. He throws it, binds it in mid-air as a platform, uses its light to reveal hidden paths, and pours himself into iron bodies, all while tethered to it.",
-      "I designed the game and its story and directed development: the core mechanics, the puzzle design, the story world, and the feel of every chamber through repeated playtesting. The world is a dark-fantasy kingdom told through small fragments like lost wishes and unsigned notes. The code is AI-assisted, which let me focus on design and iterate quickly."
-    ],
-    listHeading: "So far",
-    list: [
-      "Two full chapters, 40 puzzle chambers",
-      "Three unlockable abilities",
-      "Two boss encounters, one of which can be finished without a fight",
-      "Collectible memories with animated \"ghost\" visions",
-      "Custom shaders for the characters",
-      "An automated playtest that solves every chamber to catch regressions"
-    ],
-    gallery: [
-      { src: "assets/projects/bound-by-wishes/title-screen.webp", caption: "The title screen of the browser demo." },
-      { src: "assets/projects/bound-by-wishes/chamber-10.webp", caption: "Chamber 10, Hidden Step: the lamp can't go where the steps are. Its light can." },
-      { src: "assets/projects/bound-by-wishes/chapter-2.webp", caption: "Chapter 2: The Vault, Hadir's Workshop and Unfinished Work." }
-    ],
-    links: [
-      { label: "Play in browser", url: "play/bound-by-wishes/", primary: true },
-      { label: "Download the demo", url: "https://limewire.com/d/iNKxT#OXMpsEeSAk" }
-    ]
-  },
-  {
-    slug: "chin-check",
-    title: "Chin Check",
-    type: "Game",
-    status: "Early development",
-    summary: "An MMA simulation and management game that follows one fighter's career. You run their training, then make real-time calls during fights that change how each one ends.",
-    tech: ["Godot 4.7"],
-    cover: "assets/projects/chin-check/test-fight.webp",
-    coverAlt: "The Chin Check prototype: an octagon and a fight log showing one round of jabs and 9 passing checks",
-    facts: [
-      { label: "Genre", value: "Sports sim and management" },
-      { label: "Engine", value: "Godot 4.7" },
-      { label: "Stage", value: "Prototype fight simulation" }
-    ],
-    body: [
-      "The first piece is the fight simulation. Two fighters trade strikes in real time, and each strike lands or misses on its own odds. Work and damage wear them down: stamina drains, and speed, striking defence and fight IQ drop as they get hurt.",
-      "The simulation is deterministic, so a fight replays exactly from its seed and the calls made during it. It also runs far faster than real time, which leaves room to simulate the fights you don't watch."
-    ],
-    listHeading: "So far",
-    list: [
-      "A tick-based fight simulation with three five-minute rounds",
-      "Moves loaded from data files, five so far",
-      "Fatigue and injury that wear down a fighter's stats mid-fight",
-      "Exact replays from a seed plus the commands given",
-      "60 seconds of fight simulated in about 20 ms, over 1,000 times real time",
-      "A live debug console and an automated test fight with 9 checks, all passing"
-    ],
-    gallery: [
-      { src: "assets/projects/chin-check/test-fight.webp", caption: "A test fight: one round of jabs, the end-of-fight summary, and all 9 checks passing." },
-      { src: "assets/projects/chin-check/live-fight.webp", caption: "The debug console during a live fight: three five-minute rounds at 2x speed." }
-    ],
-    links: []
   }
 ];
